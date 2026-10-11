@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS-6 // Global Misinformation Intelligence & Verification Platform</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js for enterprise analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        nexus: {
+                            50: '#f0f5ff',
+                            100: '#e0eaff',
+                            500: '#4f46e5',
+                            600: '#4338ca',
+                            900: '#1e1b4b',
+                            950: '#0f0c29'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-indigo-600 selection:text-white">
+
+    <!-- Global Region Telemetry Banner -->
+    <div class="bg-slate-900 text-slate-300 px-6 py-2 text-xs font-mono flex flex-col sm:flex-row items-center justify-between border-b border-slate-800 z-50">
+        <div class="flex items-center space-x-6">
+            <span class="flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>GLOBAL GRID: ONLINE</span>
+            </span>
+            <span class="hidden md:inline text-slate-400">|</span>
+            <span class="hidden md:inline">US-EAST: <strong>99.98%</strong></span>
+            <span class="hidden md:inline">EU-CENTRAL: <strong>99.95%</strong></span>
+            <span class="hidden md:inline">AP-SOUTH (BLR): <strong>100%</strong></span>
+        </div>
+        <div class="mt-1 sm:mt-0 flex items-center space-x-4">
+            <span>MODEL: <strong class="text-indigo-400">DeBERTa-v3-Transformer</strong></span>
+            <span>LATENCY: <strong class="text-emerald-400">180ms</strong></span>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-indigo-200">
+                    N6
+                </div>
+                <div>
+                    <span class="font-bold text-slate-900 tracking-tight text-base block">NEXUS-6</span>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest block -mt-1">Enterprise Intelligence Engine</span>
+                </div>
+            </div>
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="#playground" class="hover:text-indigo-600 transition">Interactive Analyzer</a>
+                <a href="#telemetry" class="hover:text-indigo-600 transition">Metrics & Benchmarks</a>
+                <a href="#architecture" class="hover:text-indigo-600 transition">Cloud Architecture</a>
+                <a href="#team" class="hover:text-indigo-600 transition">Team</a>
+                <a href="#api-docs" class="hover:text-indigo-600 transition">API Reference</a>
+            </nav>
+            <div class="flex items-center space-x-3">
+                <button onclick="scrollToPlayground()" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-xs shadow-sm transition">
+                    Launch Console
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-slate-100 border-b border-slate-200 py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                        <span>Production-Grade Misinformation Defense System</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                        Global-Scale <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600">Credibility Analysis</span>
+                    </h1>
+                    <p class="text-slate-600 text-lg leading-relaxed max-w-2xl">
+                        Deploying state-of-the-art transformer classification pipelines, semantic vector extraction, and automated cross-reference verification across 2,500+ benchmarked news articles.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <button onclick="scrollToPlayground()" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm shadow-md shadow-indigo-200 transition flex items-center space-x-2">
+                            <i data-lucide="terminal" class="w-4 h-4"></i>
+                            <span>Open Live Playground</span>
+                        </button>
+                        <a href="#architecture" class="px-6 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-medium text-sm transition flex items-center space-x-2">
+                            <i data-lucide="book-open" class="w-4 h-4"></i>
+                            <span>View Architecture</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Hero Quick Stats Card -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                    <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm space-y-2">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+                            94%
+                        </div>
+                        <div class="text-sm font-bold text-slate-900">Model Accuracy</div>
+                        <p class="text-xs text-slate-500">Verified via combined LIAR & WELFake benchmark test runs.</p>
+                    </div>
+                    <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm space-y-2">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold">
+                            180ms
+                        </div>
+                        <div class="text-sm font-bold text-slate-900">Cloud Latency</div>
+                        <p class="text-xs text-slate-500">Optimized direct-text inference response speed.</p>
+                    </div>
+                    <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm space-y-2">
+                        <div class="w-10 h-10 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center font-bold">
+                            2.5k
+                        </div>
+                        <div class="text-sm font-bold text-slate-900">Test Coverage</div>
+                        <p class="text-xs text-slate-500">Rigorous test suites with 100% SSRF mitigation.</p>
+                    </div>
+                    <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm space-y-2">
+                        <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center font-bold">
+                            100%
+                        </div>
+                        <div class="text-sm font-bold text-slate-900">Secure Guard</div>
+                        <p class="text-xs text-slate-500">Server-side sanitization and rate-limiting active.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Interactive Playground Section -->
+    <section id="playground" class="py-16 max-w-7xl mx-auto px-6 w-full">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+            <div>
+                <span class="text-xs font-mono text-indigo-600 uppercase tracking-widest block mb-1">Interactive Console</span>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">NEXUS-6 Verification Playground</h2>
+            </div>
+            <div class="mt-4 md:mt-0 flex space-x-2">
+                <button onclick="switchMode('single')" id="mode-single-btn" class="px-4 py-2 rounded-xl text-sm font-medium transition bg-indigo-600 text-white shadow-xs">Single Claim</button>
+                <button onclick="switchMode('batch')" id="mode-batch-btn" class="px-4 py-2 rounded-xl text-sm font-medium transition text-slate-600 hover:bg-slate-200/60">Batch URL Scanner</button>
+                <button onclick="switchMode('api')" id="mode-api-btn" class="px-4 py-2 rounded-xl text-sm font-medium transition text-slate-600 hover:bg-slate-200/60">API Payload Tester</button>
+            </div>
+        </div>
+
+        <!-- Playground Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Left Console Input Area -->
+            <div class="lg:col-span-7 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
+                
+                <!-- Single Mode View -->
+                <div id="view-single" class="space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex space-x-2">
+                            <button id="tab-text" onclick="switchInputType('text')" class="px-3 py-1.5 rounded-lg text-xs font-medium transition bg-slate-900 text-white">Direct Text</button>
+                            <button id="tab-url" onclick="switchInputType('url')" class="px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-600 hover:bg-slate-100">Web URL</button>
+                        </div>
+                        <span id="char-counter" class="text-xs font-mono text-slate-400">0 / 5000 chars</span>
+                    </div>
+
+                    <div id="container-text">
+                        <textarea id="input-text" rows="7" placeholder="Paste news headline, article excerpt, or statement here for real-time verification..." class="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition resize-none"></textarea>
+                    </div>
+
+                    <div id="container-url" class="hidden space-y-3">
+                        <input id="input-url" type="url" placeholder="https://news-outlet.com/article-slug..." class="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition">
+                        <p class="text-xs text-slate-500">SSRF guardrails active: Private IPs and malicious looping scripts are automatically blocked.</p>
+                    </div>
+                </div>
+
+                <!-- Batch Mode View -->
+                <div id="view-batch" class="hidden space-y-4">
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-xs font-bold text-slate-700 block">Batch CSV / URL List Processing</span>
+                    </div>
+                    <textarea rows="7" placeholder="https://source-a.com/article-1&#10;https://source-b.com/article-2&#10;https://source-c.com/article-3" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs font-mono text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition resize-none"></textarea>
+                    <p class="text-xs text-slate-500">Provide up to 5 URLs separated by newlines for parallel cloud-worker evaluation.</p>
+                </div>
+
+                <!-- API Payload View -->
+                <div id="view-api" class="hidden space-y-4">
+                    <div class="border-b border-slate-100 pb-3 flex justify-between items-center">
+                        <span class="text-xs font-bold text-slate-700">Raw JSON Payload Request</span>
+                        <span class="text-[10px] font-mono bg-slate-100 px-2 py-0.5 rounded text-slate-600">POST /api/v2/verify</span>
+                    </div>
+                    <pre class="bg-slate-900 text-emerald-400 p-4 rounded-xl text-xs font-mono overflow-x-auto"><code>{
+  "client_id": "nexus-web-portal",
+  "timestamp": "2026-10-11T14:30:00Z",
+  "payload": {
+    "type": "text_claim",
+    "content": "Sample statement for transformer evaluation."
+  },
+  "options": {
+    "include_evidence": true,
+    "strict_mode": true
+  }
+}</code></pre>
+                </div>
+
+                <!-- Action Controls -->
+                <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <button onclick="resetPlayground()" class="text-xs text-slate-500 hover:text-slate-800 transition font-medium flex items-center space-x-1">
+                        <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                        <span>Reset Console</span>
+                    </button>
+                    <button onclick="executeInference()" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm shadow-md shadow-indigo-200 transition flex items-center space-x-2">
+                        <i data-lucide="cpu" class="w-4 h-4"></i>
+                        <span>Run Cloud Inference</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Console Output & Telemetry Analytics -->
+            <div class="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm min-h-[480px] flex flex-col justify-between">
+                
+                <!-- Idle State -->
+                <div id="out-idle" class="flex flex-col items-center justify-center h-full text-center py-20">
+                    <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-400 mb-4 shadow-sm">
+                        <i data-lucide="terminal" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-800">Awaiting Telemetry Input</h3>
+                    <p class="text-xs text-slate-500 mt-1 max-w-xs">Execute an analysis on the left console to stream live confidence metrics and verification charts.</p>
+                </div>
+
+                <!-- Processing State -->
+                <div id="out-loading" class="hidden flex flex-col items-center justify-center h-full text-center py-24 space-y-4">
+                    <div class="w-10 h-10 rounded-full border-3 border-indigo-600 border-t-transparent animate-spin"></div>
+                    <div class="space-y-1 font-mono">
+                        <div class="text-xs font-bold text-slate-700">PROCESSING INFERENCE PIPELINE...</div>
+                        <div id="pipeline-log" class="text-[10px] text-indigo-600">Tokenizing input sequence & mapping embeddings...</div>
+                    </div>
+                </div>
+
+                <!-- Active Results State -->
+                <div id="out-results" class="hidden space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                        <div>
+                            <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Assessed Verdict</span>
+                            <h2 id="res-verdict" class="text-2xl font-black text-emerald-600">LIKELY CREDIBLE</h2>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Confidence Score</span>
+                            <span id="res-confidence" class="text-2xl font-mono font-bold text-slate-900">93.8%</span>
+                        </div>
+                    </div>
+
+                    <!-- Chart Container -->
+                    <div class="w-full h-44 flex items-center justify-center relative">
+                        <canvas id="consoleDonutChart"></canvas>
+                    </div>
+
+                    <!-- Rationale Card -->
+                    <div class="bg-slate-50 border border-slate-200/70 p-4 rounded-xl space-y-2">
+                        <div class="flex items-center space-x-2 text-xs font-mono text-indigo-600 font-bold">
+                            <i data-lucide="info" class="w-3.5 h-3.5"></i>
+                            <span>TRANSFORMER EXPLANATION</span>
+                        </div>
+                        <p id="res-rationale" class="text-xs text-slate-600 leading-relaxed">
+                            Sentence construction exhibits characteristics of structured journalistic reporting. Verified entity references align with documented news indices.
+                        </p>
+                    </div>
+
+                    <!-- Evidence Citation list -->
+                    <div class="space-y-2">
+                        <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Matched Fact-Check Sources</span>
+                        <div class="space-y-1.5">
+                            <div class="p-2 rounded-lg bg-slate-50 border border-slate-200/60 flex items-center justify-between text-xs font-medium">
+                                <span class="text-slate-700 truncate">Reuters Verified Archive Index</span>
+                                <span class="text-emerald-600 font-mono text-[11px]">Match 98.4%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Telemetry & Metrics Section -->
+    <section id="telemetry" class="bg-slate-100 border-y border-slate-200 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-mono text-indigo-600 uppercase tracking-widest block mb-1">Performance Validation</span>
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900">Comprehensive Benchmarks & Metrics</h2>
+                <p class="text-slate-600 text-sm 
